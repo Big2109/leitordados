@@ -101,17 +101,17 @@ namespace CNFBrasil
 
                                     while (pagina < maxpagina.AsInt())
                                     {
-                                        Console.WriteLine($"NOME: {nome} - UF: {uf_select}. {pagina} de {maxpagina} Terminadas");
+                                        Console.WriteLine($"NOME: {resultado1} - UF: {resultado1}. {pagina} de {maxpagina} Terminadas");
                                         pagina = pagina + 1;
                                         goto pagina;
                                     }
-                                    Console.WriteLine($"NOME: {nome} - UF: {uf_select}. {pagina} de {maxpagina} Terminadas");
+                                    Console.WriteLine($"NOME: {resultado2} - UF: {resultado2}. {pagina} de {maxpagina} Terminadas");
                                 }
                             }
                             catch (Exception ex)
                             {
                                 linhaErro++;
-                                Exportacao.Escreve($@"{Environment.CurrentDirectory}\ERRO.csv", nome + ";" + uf_select);
+                                Exportacao.Escreve($@"{Environment.CurrentDirectory}\ERRO.csv");
                             }
                         }
                         
@@ -139,11 +139,11 @@ namespace CNFBrasil
             request.CookieContainer = _cookies;
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
             request.Headers.Add(HttpRequestHeader.AcceptLanguage, "en-US,en;q=0.9,pt;q=0.8");
-            request.Headers.Add("Origin", "https://www.falecidosnobrasil.org.br");
+            request.Headers.Add("Origin", "https://www.*seusite*.com.br");
             request.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
             request.Method = "POST";
-            request.Host = "www.falecidosnobrasil.org.br";
-            request.Referer = "https://www.falecidosnobrasil.org.br/";
+            request.Host = "www.*seusite*.com.br";
+            request.Referer = "https://www.*seusite*.com.br/";
             request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36";
             request.ContentLength = parametros.Length;
             Stream sw = request.GetRequestStream();
